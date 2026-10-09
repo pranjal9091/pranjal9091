@@ -5,7 +5,7 @@
 <br/>
 
 <a href="https://github.com/pranjal9091">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=39D353&background=0D111700&center=true&vCenter=true&multiline=false&width=750&height=42&lines=Systems+%26+Low-Latency+AI+Engineer;Building+Local-First+Developer+Tools+in+Rust;Streaming+ASR+%26+Static+INT8+Edge+Quantization;Clinical+Deep+Learning+%26+Biometric+Signal+Processing;Open+Source+Builder+%40+IIIT+Ranchi" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00ff88&background=0D111700&center=true&vCenter=true&multiline=false&width=750&height=42&lines=Systems+Architect+%26+Software+Engineer;Building+Local-First+Developer+Tools+in+Rust;Distributed+P2P+Networks+%26+Applied+Cryptography;High-Performance+Neural+Runtimes+%26+INT8+Quantization;Competitive+Coder+(Peak+1553+CodeChef)+%26+Open+Source" alt="Typing SVG" />
 </a>
 
 <br/>
@@ -23,41 +23,44 @@
 
 ---
 
-### ⚡ Technical Overview & Engineering Philosophy
+### ⚡ Technical Overview & Engineering Rigor
 
-I build at the intersection of **low-level systems** and **applied AI intelligence**. Rather than writing surface-level API wrappers, I focus on the hard engineering: profiling latency bottlenecks, memory management, digital signal processing, and deterministic safety guardrails for AI workflows.
+I engineer high-performance software across **systems programming**, **distributed architectures**, and **applied AI systems**. Rather than assembling surface-level wrappers, I design reliable infrastructure from first principles: memory efficiency, compile-time safety, protocol design, and low-latency inference.
 
-- 🎙️ **Production Speech AI**: Engineering streaming ASR pipelines using Faster-Whisper, static INT8 ONNX edge quantization, and custom audio DSP filtering at **Stealthera Innovations**.
-- 🦀 **Systems & Local-First AI**: Designing zero-telemetry, memory-safe developer CLI copilot architectures in **Rust** with compile-time type-state validation.
-- 🩺 **Clinical Medical AI**: Training patient-independent ECG arrhythmia classifiers on ANSI/AAMI EC57 standards with sub-5ms edge inference.
-- 🌐 **Distributed Streaming & Cryptography**: Building zero-server memory-to-memory streaming over WebRTC DataChannels and Verifiable Delay Functions (VDF) timelock vaults.
+- 🦀 **Low-Level Systems & Safe Runtimes**: Building local-first CLI tools and developer engines in **Rust** and **C++** with compile-time type-state validation, zero-cost abstractions, and strict telemetry privacy.
+- 🌐 **Distributed Streaming & Protocols**: Architecting zero-server browser memory streaming pipelines over **WebRTC SCTP DataChannels** with adaptive backpressure flow control and cryptographic verification.
+- 🩺 **Clinical AI & Edge Inference**: Training patient-independent deep learning classifiers on ANSI/AAMI EC57 standards; optimizing model pipelines to sub-5ms edge latency via static **INT8 ONNX quantization**.
+- 🔐 **Applied Cryptography**: Constructing non-parallelizable timelock vaults using **Verifiable Delay Functions (VDF)** and sub-5ms Pietrzak proofs for cryptographic time-capsules.
+- 🛠️ **Compilers & Developer Platforms**: Synthesizing OpenAPI specifications into in-memory Abstract Syntax Trees (AST) with 0% AI hallucination for enterprise multi-language SDK pipelines.
+- 🚀 **Industry Experience**: AI Technical Lead at **Stealthera Innovations**, driving streaming model inference optimization and engineering reliability.
 
 ---
 
-### 🛠️ Tech Stack & Systems Tooling
+### 🛠️ Languages, Systems & Tooling
 
 ```
-Core Languages    : Rust • Python • C++ • TypeScript • JavaScript • SQL • Bash/Zsh
-AI & Deep Learning: PyTorch • Faster-Whisper • ONNX Runtime • Hugging Face • Ollama • Audio DSP
-Web & Distributed : FastAPI • Next.js • React • WebRTC DataChannels • WebCrypto API • Turborepo
-Databases & Infra : SQLite • PostgreSQL • Docker • Linux / POSIX • macOS Spotlight APIs • Git
+Core Languages    : Rust • C++ • Python • TypeScript • JavaScript • SQL • Bash/Zsh
+Systems & Protocols: WebRTC DataChannels • SCTP • POSIX • WebAssembly • Linux Sockets
+AI & Machine Learn : PyTorch • ONNX Runtime (FP32/INT8) • Hugging Face • Ollama • DSP
+Web & Distributed : FastAPI • Next.js • React • Turborepo • WebCrypto API
+Databases & Infra : SQLite • PostgreSQL • Docker • Linux / POSIX • macOS APIs • Git
 ```
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=rust,python,cpp,ts,js,pytorch,fastapi,nextjs,react,sqlite,postgres,docker,linux,git,bash" />
+  <img src="https://skillicons.dev/icons?i=rust,cpp,python,ts,js,pytorch,fastapi,nextjs,react,sqlite,postgres,docker,linux,git,bash" />
 </p>
 
 ---
 
-### 🚀 Flagship Architectures
+### 🚀 Flagship Engineered Architectures
 
 | System | Focus | Core Architecture & Engineering | Links |
 | :--- | :--- | :--- | :--- |
 | **[ShellMind](https://github.com/pranjal9091/ShellMind)** | Local-First AI Shell | Natural language terminal assistant in **Rust** with compile-time `&ValidatedPlan` type-state security, regex intent caching, and local SQLite indexing. | [Live Demo](https://shellmind-landing.vercel.app/) • [Repo](https://github.com/pranjal9091/ShellMind) |
-| **[RhythmNet](https://github.com/pranjal9091/RhythmNet)** | Clinical Deep Learning | ANSI/AAMI EC57 compliant arrhythmia classifier on MIT-BIH dataset with strict de Chazal patient separation and static **INT8 ONNX** edge quantization. | [Live Demo](https://appapppy-fjy6mg2n2xbnrjzyezklmz.streamlit.app/) • [Repo](https://github.com/pranjal9091/RhythmNet) |
-| **[HELIOS](https://github.com/pranjal9091/helios)** | Enterprise Developer Tooling | In-memory OpenAPI 2.0/3.0/3.1 AST compiler with 0% AI hallucination for multi-language SDK generation and offline Ollama RAG compliance audits. | [Live Demo](https://helios-web-eosin.vercel.app/) • [Repo](https://github.com/pranjal9091/helios) |
 | **[P2P-Drop](https://github.com/pranjal9091/P2P-Drop)** | Distributed Networking | Zero-server browser memory-to-memory file streaming via **WebRTC SCTP DataChannels** with backpressure watermarks and SHA-256 verification. | [Live Demo](https://p2-p-drop.vercel.app/) • [Repo](https://github.com/pranjal9091/P2P-Drop) |
 | **[Chronolock](https://github.com/pranjal9091/Chronolock)** | Applied Cryptography | Cryptographic timelock vault using **Verifiable Delay Functions (VDF)** and Pietrzak proofs to guarantee secrets remain uncrackable until wall-clock expiry. | [Live Demo](https://chronolock-eight.vercel.app/) • [Repo](https://github.com/pranjal9091/Chronolock) |
+| **[RhythmNet](https://github.com/pranjal9091/RhythmNet)** | Clinical Deep Learning | ANSI/AAMI EC57 compliant arrhythmia classifier on MIT-BIH dataset with strict de Chazal patient separation and static **INT8 ONNX** edge quantization. | [Live Demo](https://appapppy-fjy6mg2n2xbnrjzyezklmz.streamlit.app/) • [Repo](https://github.com/pranjal9091/RhythmNet) |
+| **[HELIOS](https://github.com/pranjal9091/helios)** | Enterprise Developer Tooling | In-memory OpenAPI 2.0/3.0/3.1 AST compiler with 0% AI hallucination for multi-language SDK generation and offline Ollama RAG compliance audits. | [Live Demo](https://helios-web-eosin.vercel.app/) • [Repo](https://github.com/pranjal9091/helios) |
 | **[AirStrings](https://github.com/pranjal9091/AirStrings)** | Vision DSP & Audio | Touchless polyphonic musical instrument using **MediaPipe 3D landmark tracking** at 60 FPS with adaptive EMA filtering and Tone.js synthesis. | [Live Demo](https://air-strings.vercel.app/) • [Repo](https://github.com/pranjal9091/AirStrings) |
 
 ---
