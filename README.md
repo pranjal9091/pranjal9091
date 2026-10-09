@@ -1,23 +1,23 @@
 <div align="center">
 
-# 👨‍💻 Pranjal Singh
-**Systems & AI Engineer | Open Source Builder**
+<img src="https://raw.githubusercontent.com/pranjal9091/pranjal9091/main/assets/banner.svg" alt="Pranjal Singh - Systems & AI Engineering" width="100%" />
+
+<br/>
+
+<a href="https://github.com/pranjal9091">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=39D353&background=0D111700&center=true&vCenter=true&multiline=false&width=750&height=42&lines=Systems+%26+Low-Latency+AI+Engineer;Building+Local-First+Developer+Tools+in+Rust;Streaming+ASR+%26+Static+INT8+Edge+Quantization;Clinical+Deep+Learning+%26+Biometric+Signal+Processing;Open+Source+Builder+%40+IIIT+Ranchi" alt="Typing SVG" />
+</a>
+
+<br/>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-pranjal.dev-000000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://pranjal9091.github.io/portfolio_pranjal)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-pranjal--singh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pranjal-singh-b9b456325)
 [![Email](https://img.shields.io/badge/Email-pranjalsingh9091@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pranjalsingh9091@gmail.com)
 
 <br/>
+<br/>
 
 <img src="https://counter.kuber.studio/pranjal9091/hacker/count.svg" alt="Profile views" />
-
-<br/>
-<br/>
-
-```text
-Undergrad @ IIIT Ranchi (ECE '28) • AI Technical Lead @ Stealthera Innovations
-Architecting low-latency streaming voice pipelines, local-first AI tooling, and clinical deep learning.
-```
 
 </div>
 
