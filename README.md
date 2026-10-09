@@ -4,7 +4,7 @@
 **Systems & AI Engineer | Open Source Builder**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-pranjal.dev-000000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://pranjal9091.github.io/portfolio_pranjal)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-pranjal--singh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pranjal-singh)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-pranjal--singh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pranjal-singh-b9b456325)
 [![Email](https://img.shields.io/badge/Email-pranjalsingh9091@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pranjalsingh9091@gmail.com)
 
 <br/>
