@@ -1,300 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="100%" height="380" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 135" width="100%" height="135" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Gradients -->
-    <radialGradient id="cyberBg" cx="50%" cy="40%" r="80%" fx="50%" fy="30%">
-      <stop offset="0%" stop-color="#0a121e" />
-      <stop offset="45%" stop-color="#070c14" />
-      <stop offset="100%" stop-color="#030508" />
-    </radialGradient>
-
-    <!-- Neon Circuit Gradients -->
-    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f5ff" />
-      <stop offset="50%" stop-color="#00ff88" />
-      <stop offset="100%" stop-color="#7000ff" />
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a0e" />
+      <stop offset="100%" stop-color="#040608" />
     </linearGradient>
 
-    <linearGradient id="hudBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ff88">
-        <animate attributeName="stop-color" values="#00ff88;#00f5ff;#a855f7;#00ff88" dur="10s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="50%" stop-color="#00f5ff">
-        <animate attributeName="stop-color" values="#00f5ff;#a855f7;#00ff88;#00f5ff" dur="10s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="100%" stop-color="#a855f7">
-        <animate attributeName="stop-color" values="#a855f7;#00ff88;#00f5ff;#a855f7" dur="10s" repeatCount="indefinite" />
-      </stop>
-    </linearGradient>
-
-    <!-- Matrix Code Stream Gradient -->
-    <linearGradient id="matrixGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
-      <stop offset="15%" stop-color="#00ff88" stop-opacity="0.85" />
-      <stop offset="70%" stop-color="#008f44" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#003818" stop-opacity="0.0" />
-    </linearGradient>
-
-    <!-- Core Glow Filter -->
-    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur1" />
-      <feGaussianBlur stdDeviation="9" result="blur2" />
+    <!-- Neon Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
+        <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <!-- Scanline Pattern for CRT Monitor -->
-    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="1.2" opacity="0.45" />
+    <!-- Subtle Scanlines -->
+    <pattern id="scan" width="100" height="3" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="0.8" opacity="0.35" />
     </pattern>
   </defs>
 
   <style>
-    .terminal-font {
+    .font-mono {
       font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     }
 
-    /* Matrix Digital Rain Animation */
-    @keyframes rain1 { 0% { transform: translateY(-380px); } 100% { transform: translateY(380px); } }
-    @keyframes rain2 { 0% { transform: translateY(-420px); } 100% { transform: translateY(420px); } }
-    @keyframes rain3 { 0% { transform: translateY(-360px); } 100% { transform: translateY(360px); } }
-    @keyframes rain4 { 0% { transform: translateY(-460px); } 100% { transform: translateY(460px); } }
-
-    .matrix-col-1 { animation: rain1 3.2s linear infinite; }
-    .matrix-col-2 { animation: rain2 4.1s linear infinite 0.6s; }
-    .matrix-col-3 { animation: rain3 2.8s linear infinite 1.2s; }
-    .matrix-col-4 { animation: rain4 4.8s linear infinite 0.2s; }
-    .matrix-col-5 { animation: rain1 3.6s linear infinite 1.8s; }
-    .matrix-col-6 { animation: rain2 3.9s linear infinite 0.9s; }
-    .matrix-col-7 { animation: rain3 3.1s linear infinite 2.1s; }
-    .matrix-col-8 { animation: rain4 4.4s linear infinite 1.5s; }
-
-    /* Core Reactor Rotations */
-    @keyframes rotateClockwise {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes rotateCounter {
-      0% { transform: rotate(360deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes reactorPulse {
-      0%, 100% { r: 24px; opacity: 0.85; filter: drop-shadow(0 0 12px #00f5ff); }
-      50% { r: 30px; opacity: 1; filter: drop-shadow(0 0 22px #00ff88); }
-    }
-
-    .rot-cw { transform-origin: 460px 185px; animation: rotateClockwise 14s linear infinite; }
-    .rot-ccw { transform-origin: 460px 185px; animation: rotateCounter 20s linear infinite; }
-    .reactor-core { animation: reactorPulse 3s ease-in-out infinite; }
-
-    /* Terminal Cursor Blink */
-    @keyframes cursorBlink {
+    /* Blinking Terminal Cursor */
+    @keyframes blinkCursor {
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
     }
-    .terminal-cursor { animation: cursorBlink 0.9s infinite; }
+    .cursor { animation: blinkCursor 0.85s infinite; }
 
-    /* Glitch Title Effect */
-    @keyframes titleGlitch {
-      0%, 92%, 100% { transform: translate(0, 0); }
-      93% { transform: translate(-2px, 1px); }
-      95% { transform: translate(2px, -1px); }
-      97% { transform: translate(-1px, 2px); }
+    /* Radar / Quantum Gyroscope Rotations */
+    @keyframes spinOrbit1 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-    .glitch-text { animation: titleGlitch 5s infinite; }
+    @keyframes spinOrbit2 {
+      0% { transform: rotate(60deg) scale(0.9); }
+      100% { transform: rotate(420deg) scale(0.9); }
+    }
+    @keyframes spinOrbit3 {
+      0% { transform: rotate(120deg) scale(0.8); }
+      100% { transform: rotate(480deg) scale(0.8); }
+    }
 
-    /* Radar Ping Wave */
-    @keyframes radarPing {
-      0% { r: 10px; opacity: 0.9; stroke-width: 2px; }
-      100% { r: 90px; opacity: 0; stroke-width: 0.5px; }
-    }
-    .radar-wave-1 { animation: radarPing 3.5s ease-out infinite; }
-    .radar-wave-2 { animation: radarPing 3.5s ease-out infinite 1.75s; }
+    .orbit-1 { transform-origin: 735px 68px; animation: spinOrbit1 9s linear infinite; }
+    .orbit-2 { transform-origin: 735px 68px; animation: spinOrbit2 12s linear infinite reverse; }
+    .orbit-3 { transform-origin: 735px 68px; animation: spinOrbit3 15s linear infinite; }
 
-    /* Cyber Frame Pulse */
-    @keyframes framePulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
+    /* Quantum Core Pulse */
+    @keyframes corePulse {
+      0%, 100% { r: 5px; opacity: 0.85; filter: drop-shadow(0 0 6px #00ff88); }
+      50% { r: 7.5px; opacity: 1; filter: drop-shadow(0 0 14px #00f5ff); }
     }
-    .hud-frame { animation: framePulse 4s ease-in-out infinite; }
+    .core-dot { animation: corePulse 2.4s ease-in-out infinite; }
+
+    /* Status Dot Blink */
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px #00ff88); }
+      50% { opacity: 0.3; filter: none; }
+    }
+    .live-dot { animation: livePulse 2s ease-in-out infinite; }
   </style>
 
-  <!-- Base Dark Canvas -->
-  <rect x="0" y="0" width="920" height="380" rx="16" fill="url(#cyberBg)" />
+  <!-- Terminal Window Background -->
+  <rect x="2" y="2" width="846" height="131" rx="10" fill="url(#bg)" stroke="#1e293b" stroke-width="1.2" />
 
-  <!-- Matrix Digital Rain Streams (Background Layer) -->
-  <g opacity="0.18" fill="url(#matrixGrad)" class="terminal-font" font-size="11" font-weight="700">
-    <g class="matrix-col-1" transform="translate(35, 0)">
-      <text y="0">0x7F</text><text y="25">ELF</text><text y="50">01</text><text y="75">01</text><text y="100">00</text><text y="125">x86_64</text><text y="150">SYS</text><text y="175">CALL</text><text y="200">RUST</text><text y="225">0xFF</text><text y="250">PTR</text><text y="275">NULL</text><text y="300">0x0A</text><text y="325">ASM</text><text y="350">RET</text>
-    </g>
-    <g class="matrix-col-2" transform="translate(135, 0)">
-      <text y="0">WASM</text><text y="25">0x90</text><text y="50">NOP</text><text y="75">MOV</text><text y="100">RAX</text><text y="125">SOCK</text><text y="150">SCTP</text><text y="175">WEBRTC</text><text y="200">0x42</text><text y="225">HEAP</text><text y="250">MALLOC</text><text y="275">0xDE</text><text y="300">AD</text><text y="325">BE</text><text y="350">EF</text>
-    </g>
-    <g class="matrix-col-3" transform="translate(235, 0)">
-      <text y="0">VDF</text><text y="25">PIETRZAK</text><text y="50">0x01</text><text y="75">AES_GCM</text><text y="100">256</text><text y="125">SHA256</text><text y="150">HASH</text><text y="175">ROOT</text><text y="200">SYNC</text><text y="225">PIPE</text><text y="250">FORK</text><text y="275">EXEC</text><text y="300">0x33</text><text y="325">CORE</text><text y="350">HALT</text>
-    </g>
-    <g class="matrix-col-4" transform="translate(340, 0)">
-      <text y="0">AST</text><text y="25">NODE</text><text y="50">LEXER</text><text y="75">TOKEN</text><text y="100">PARSER</text><text y="125">0x55</text><text y="150">SCHEME</text><text y="175">INT8</text><text y="200">ONNX</text><text y="225">TENSOR</text><text y="250">CUDA</text><text y="275">0xEE</text><text y="300">GPU</text><text y="325">MEM</text><text y="350">SYNC</text>
-    </g>
-    <g class="matrix-col-5" transform="translate(580, 0)">
-      <text y="0">TCP</text><text y="25">SOCKET</text><text y="50">0x12</text><text y="75">BIND</text><text y="100">LISTEN</text><text y="125">ACCEPT</text><text y="150">POLL</text><text y="175">EPOLL</text><text y="200">ASYNC</text><text y="225">AWAIT</text><text y="250">FUTEX</text><text y="275">MUTEX</text><text y="300">0x77</text><text y="325">LOCK</text><text y="350">FREE</text>
-    </g>
-    <g class="matrix-col-6" transform="translate(685, 0)">
-      <text y="0">RUST</text><text y="25">TYPE</text><text y="50">STATE</text><text y="75">TRAIT</text><text y="100">LIFETIME</text><text y="125">0xBB</text><text y="150">ARC</text><text y="175">RC</text><text y="200">REFCELL</text><text y="225">STACK</text><text y="250">CALL</text><text y="275">FRAME</text><text y="300">GDB</text><text y="325">BREAK</text><text y="350">EXIT</text>
-    </g>
-    <g class="matrix-col-7" transform="translate(785, 0)">
-      <text y="0">P2P</text><text y="25">STREAM</text><text y="50">CHUNK</text><text y="75">BUFFER</text><text y="100">RING</text><text y="125">0xAA</text><text y="150">PACKET</text><text y="175">ROUTE</text><text y="200">GATE</text><text y="225">MESH</text><text y="250">PEER</text><text y="275">DISC</text><text y="300">0x99</text><text y="325">INIT</text><text y="350">OK</text>
-    </g>
-    <g class="matrix-col-8" transform="translate(875, 0)">
-      <text y="0">SYS</text><text y="25">KERN</text><text y="50">0xCC</text><text y="75">BOOT</text><text y="100">PROBE</text><text y="125">DMA</text><text y="150">MMU</text><text y="175">PAGE</text><text y="200">FAULT</text><text y="225">TRAP</text><text y="250">INTR</text><text y="275">IRQ</text><text y="300">SCHED</text><text y="325">TICK</text><text y="350">DONE</text>
-    </g>
-  </g>
+  <!-- Window Header Bar -->
+  <path d="M 2,12 A 10,10 0 0 1 12,2 L 838,2 A 10,10 0 0 1 848,12 L 848,28 L 2,28 Z" fill="#0c1117" stroke="#1e293b" stroke-width="0.8" />
+  
+  <!-- Window Controls (Mac / Linux Terminal dots) -->
+  <circle cx="18" cy="15" r="4.5" fill="#ff5f56" />
+  <circle cx="33" cy="15" r="4.5" fill="#ffbd2e" />
+  <circle cx="48" cy="15" r="4.5" fill="#27c93f" />
 
-  <!-- Perspective Cyber Floor Grid (Horizon at y=330) -->
-  <g opacity="0.22" stroke="#00f5ff" stroke-width="0.7">
-    <line x1="0" y1="340" x2="920" y2="340" />
-    <line x1="0" y1="355" x2="920" y2="355" stroke="#00ff88" stroke-width="1" />
-    <line x1="0" y1="372" x2="920" y2="372" stroke="#00f5ff" stroke-width="1.4" />
-    <line x1="460" y1="320" x2="60" y2="380" />
-    <line x1="460" y1="320" x2="160" y2="380" />
-    <line x1="460" y1="320" x2="280" y2="380" />
-    <line x1="460" y1="320" x2="380" y2="380" />
-    <line x1="460" y1="320" x2="540" y2="380" />
-    <line x1="460" y1="320" x2="640" y2="380" />
-    <line x1="460" y1="320" x2="760" y2="380" />
-    <line x1="460" y1="320" x2="860" y2="380" />
-  </g>
+  <!-- Terminal Title -->
+  <text x="425" y="18" fill="#64748b" font-size="11" text-anchor="middle" class="font-mono">pranjal@node-01: ~ (zsh)</text>
 
-  <!-- Outer HUD Cyber Frame -->
-  <rect x="12" y="12" width="896" height="356" rx="12" fill="none" stroke="url(#hudBorder)" stroke-width="1.8" class="hud-frame" />
-  <!-- Corner Tech Brackets -->
-  <path d="M 12,42 L 12,12 L 42,12" fill="none" stroke="#00ff88" stroke-width="3.5" />
-  <path d="M 908,42 L 908,12 L 878,12" fill="none" stroke="#00f5ff" stroke-width="3.5" />
-  <path d="M 12,338 L 12,368 L 42,368" fill="none" stroke="#a855f7" stroke-width="3.5" />
-  <path d="M 908,338 L 908,368 L 878,368" fill="none" stroke="#00ff88" stroke-width="3.5" />
+  <!-- Left: Minimal Hacker Shell Prompt -->
+  <g transform="translate(24, 46)" class="font-mono">
+    <!-- Command Line 1 -->
+    <text x="0" y="16" fill="#00ff88" font-size="13" font-weight="700">➜</text>
+    <text x="18" y="16" fill="#38bdf8" font-size="13" font-weight="700">~</text>
+    <text x="36" y="16" fill="#f8fafc" font-size="13" font-weight="600">whoami</text>
+    <text x="105" y="16" fill="#64748b" font-size="12">--verbose</text>
 
-  <!-- Top Global Header Bar -->
-  <g transform="translate(32, 28)">
-    <rect x="0" y="0" width="160" height="22" rx="4" fill="#0d1929" stroke="#00f5ff" stroke-width="0.8" opacity="0.9" />
-    <circle cx="12" cy="11" r="4" fill="#00ff88" />
-    <text x="24" y="15" fill="#00ff88" font-size="10.5" font-weight="700" class="terminal-font">NODE: PRANJAL_CORE</text>
-
-    <text x="180" y="15" fill="#48586c" font-size="10" class="terminal-font">//</text>
-
-    <text x="198" y="15" fill="#8b949e" font-size="10.5" class="terminal-font">ARCH: <tspan fill="#00f5ff" font-weight="bold">x86_64 / BARE-METAL / POSIX</tspan></text>
-
-    <text x="475" y="15" fill="#48586c" font-size="10" class="terminal-font">//</text>
-
-    <text x="495" y="15" fill="#8b949e" font-size="10.5" class="terminal-font">SECURITY: <tspan fill="#a855f7" font-weight="bold">TYPE-SAFE VERIFIED</tspan></text>
-
-    <text x="735" y="15" fill="#00ff88" font-size="10.5" font-weight="bold" class="terminal-font">[ 0 ERRORS ]</text>
-  </g>
-
-  <!-- Central Rotating Quantum Reactor Core (Between Left & Right Panels) -->
-  <g id="quantumCore">
-    <!-- Radar Waves Expanding -->
-    <circle cx="460" cy="185" r="30" fill="none" stroke="#00f5ff" opacity="0.4" class="radar-wave-1" />
-    <circle cx="460" cy="185" r="30" fill="none" stroke="#00ff88" opacity="0.4" class="radar-wave-2" />
-
-    <!-- Outer Ring with Ticks -->
-    <circle cx="460" cy="185" r="74" fill="none" stroke="#162338" stroke-width="2" />
-    <circle cx="460" cy="185" r="74" fill="none" stroke="#00f5ff" stroke-width="2.5" stroke-dasharray="14, 28, 45, 12, 60, 20" class="rot-cw" />
-
-    <!-- Middle Inverted Ring -->
-    <circle cx="460" cy="185" r="54" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="25, 15, 40, 20" class="rot-ccw" />
-
-    <!-- Inner Data Ring -->
-    <circle cx="460" cy="185" r="38" fill="none" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="6, 6" class="rot-cw" />
-
-    <!-- Pulsing Center Orb -->
-    <circle cx="460" cy="185" r="24" fill="#03121f" stroke="#00f5ff" stroke-width="2" class="reactor-core" filter="url(#neonGlow)" />
-    <!-- Center Tech Symbol -->
-    <polygon points="460,173 470,191 450,191" fill="#00ff88" opacity="0.9" />
-    <circle cx="460" cy="185" r="4" fill="#ffffff" />
-  </g>
-
-  <!-- LEFT HUD PANEL: Kernel & Technical Architecture -->
-  <g transform="translate(32, 65)">
-    <!-- Subtitle Tag -->
-    <rect x="0" y="0" width="112" height="18" rx="3" fill="#13233a" />
-    <text x="8" y="13" fill="#00f5ff" font-size="9.5" font-weight="700" class="terminal-font">KERNEL_STACK</text>
-
-    <!-- Main Name Header with Cyber Glitch -->
-    <g class="glitch-text">
-      <text x="0" y="52" fill="#ffffff" font-size="32" font-weight="900" class="terminal-font" letter-spacing="-1">
-        PRANJAL SINGH
-      </text>
-    </g>
-
-    <text x="0" y="74" fill="#00ff88" font-size="12.5" font-weight="700" class="terminal-font" letter-spacing="0.5">
-      SYSTEMS ARCHITECT // SOFTWARE &amp; AI ENGINEER
+    <!-- Output Line 1 -->
+    <text x="0" y="40" fill="#f8fafc" font-size="18" font-weight="800" letter-spacing="-0.3">
+      PRANJAL SINGH <tspan fill="#00f5ff" font-size="14" font-weight="600">//</tspan> <tspan fill="#00ff88" font-size="13.5" font-weight="700">SYSTEMS &amp; APPLIED AI ARCHITECT</tspan>
     </text>
 
-    <text x="0" y="96" fill="#8b949e" font-size="11" class="terminal-font">
-      Undergrad @ IIIT Ranchi • ECE Class of 2028
-    </text>
+    <!-- Output Line 2: Stack Telemetry -->
+    <g transform="translate(0, 58)" font-size="10.5">
+      <circle cx="4" cy="4" r="3" fill="#00ff88" class="live-dot" />
+      <text x="14" y="7" fill="#64748b">STATUS: <tspan fill="#00ff88" font-weight="600">ACTIVE</tspan></text>
+      <text x="115" y="7" fill="#334155">|</text>
+      <text x="128" y="7" fill="#64748b">STACK: <tspan fill="#38bdf8" font-weight="600">Rust • C++ • Python • TypeScript</tspan></text>
+      <text x="365" y="7" fill="#334155">|</text>
+      <text x="378" y="7" fill="#64748b">LOC: <tspan fill="#f1f5f9" font-weight="600">IIIT Ranchi '28</tspan></text>
+    </g>
 
-    <!-- Architecture Bullets -->
-    <g transform="translate(0, 118)" class="terminal-font" font-size="11">
-      <text y="0" fill="#48586c">&gt; <tspan fill="#e6edf3" font-weight="600">LANGUAGES</tspan> : <tspan fill="#38bdf8">Rust • C++ • Python • TypeScript</tspan></text>
-      <text y="22" fill="#48586c">&gt; <tspan fill="#e6edf3" font-weight="600">SYSTEMS</tspan>   : <tspan fill="#00ff88">P2P Protocols • AST Compilers • Local AI</tspan></text>
-      <text y="44" fill="#48586c">&gt; <tspan fill="#e6edf3" font-weight="600">COMPUTE</tspan>   : <tspan fill="#a855f7">Quantization • PyTorch • WebAssembly</tspan></text>
-      <text y="66" fill="#48586c">&gt; <tspan fill="#e6edf3" font-weight="600">SECURITY</tspan>  : <tspan fill="#e6edf3">Type-State Safety • VDF Timelocks • 0% Leak</tspan></text>
+    <!-- Command Line 2 with Blinking Cursor -->
+    <g transform="translate(0, 75)">
+      <text x="0" y="6" fill="#00ff88" font-size="11.5" font-weight="700">➜</text>
+      <text x="18" y="6" fill="#38bdf8" font-size="11.5" font-weight="700">~</text>
+      <text x="36" y="6" fill="#64748b" font-size="11.5">execute_future</text>
+      <rect x="142" y="-4" width="7" height="12" fill="#00ff88" class="cursor" />
     </g>
   </g>
 
-  <!-- RIGHT HUD PANEL: Flagship Engineered Systems Matrix -->
-  <g transform="translate(565, 65)">
-    <!-- Subtitle Tag -->
-    <rect x="0" y="0" width="145" height="18" rx="3" fill="#13233a" />
-    <text x="8" y="13" fill="#00ff88" font-size="9.5" font-weight="700" class="terminal-font">DEPLOYED_PAYLOADS</text>
+  <!-- Right: Minimal 3D Quantum Gyroscope / Radar Node (Center at 735, 68) -->
+  <g id="quantumNode">
+    <!-- Outer Bounding Subtle Ring -->
+    <circle cx="735" cy="68" r="46" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3, 3" />
 
-    <!-- System Cards List -->
-    <g transform="translate(0, 32)" class="terminal-font">
-      <!-- Item 1: ShellMind -->
-      <rect x="0" y="0" width="320" height="28" rx="5" fill="#091424" stroke="#1b3152" stroke-width="1" />
-      <circle cx="12" cy="14" r="3" fill="#00ff88" />
-      <text x="24" y="18" fill="#ffffff" font-size="11.5" font-weight="700">ShellMind</text>
-      <text x="96" y="18" fill="#8b949e" font-size="10">Local AI Shell in Rust (&amp;ValidatedPlan)</text>
+    <!-- Orbit 1 (Neon Cyan) -->
+    <ellipse cx="735" cy="68" rx="42" ry="15" fill="none" stroke="#00f5ff" stroke-width="1.4" opacity="0.8" class="orbit-1" />
+    <circle cx="777" cy="68" r="2.5" fill="#00f5ff" class="orbit-1" />
 
-      <!-- Item 2: P2P-Drop -->
-      <rect x="0" y="34" width="320" height="28" rx="5" fill="#091424" stroke="#1b3152" stroke-width="1" />
-      <circle cx="12" cy="48" r="3" fill="#00f5ff" />
-      <text x="24" y="52" fill="#ffffff" font-size="11.5" font-weight="700">P2P-Drop</text>
-      <text x="96" y="52" fill="#8b949e" font-size="10">Zero-Server Memory Streaming (WebRTC)</text>
+    <!-- Orbit 2 (Emerald Matrix) -->
+    <ellipse cx="735" cy="68" rx="42" ry="15" fill="none" stroke="#00ff88" stroke-width="1.4" opacity="0.8" class="orbit-2" />
+    <circle cx="777" cy="68" r="2.5" fill="#00ff88" class="orbit-2" />
 
-      <!-- Item 3: Chronolock -->
-      <rect x="0" y="68" width="320" height="28" rx="5" fill="#091424" stroke="#1b3152" stroke-width="1" />
-      <circle cx="12" cy="82" r="3" fill="#a855f7" />
-      <text x="24" y="86" fill="#ffffff" font-size="11.5" font-weight="700">Chronolock</text>
-      <text x="106" y="86" fill="#8b949e" font-size="10">VDF Cryptographic Timelock Vault</text>
+    <!-- Orbit 3 (Cyber Purple) -->
+    <ellipse cx="735" cy="68" rx="42" ry="15" fill="none" stroke="#a855f7" stroke-width="1.2" opacity="0.75" class="orbit-3" />
+    <circle cx="777" cy="68" r="2" fill="#a855f7" class="orbit-3" />
 
-      <!-- Item 4: RhythmNet -->
-      <rect x="0" y="102" width="320" height="28" rx="5" fill="#091424" stroke="#1b3152" stroke-width="1" />
-      <circle cx="12" cy="116" r="3" fill="#00ff88" />
-      <text x="24" y="120" fill="#ffffff" font-size="11.5" font-weight="700">RhythmNet</text>
-      <text x="100" y="120" fill="#8b949e" font-size="10">ANSI/AAMI EC57 Clinical AI (INT8 ONNX)</text>
-
-      <!-- Item 5: HELIOS -->
-      <rect x="0" y="136" width="320" height="28" rx="5" fill="#091424" stroke="#1b3152" stroke-width="1" />
-      <circle cx="12" cy="150" r="3" fill="#00f5ff" />
-      <text x="24" y="154" fill="#ffffff" font-size="11.5" font-weight="700">HELIOS</text>
-      <text x="82" y="154" fill="#8b949e" font-size="10">OpenAPI In-Memory AST Compiler Engine</text>
-    </g>
+    <!-- Glowing Quantum Core Dot -->
+    <circle cx="735" cy="68" r="5" fill="#ffffff" class="core-dot" />
   </g>
 
-  <!-- Bottom Interactive Terminal Command Prompt -->
-  <g transform="translate(32, 335)">
-    <rect x="0" y="0" width="856" height="24" rx="4" fill="#060c16" stroke="#1a2b45" stroke-width="0.8" />
-    <text x="12" y="16" fill="#00ff88" font-size="11.5" font-weight="700" class="terminal-font">root@pranjal-core:~#</text>
-    <text x="175" y="16" fill="#f0f6fc" font-size="11.5" class="terminal-font">
-      cargo run --release --bin build_future <tspan fill="#38bdf8">[STATUS: COMPILED_SUCCESSFULLY]</tspan>
-    </text>
-    <rect x="765" y="6" width="7" height="12" fill="#00ff88" class="terminal-cursor" />
-  </g>
-
-  <!-- CRT Monitor Scanline Overlay -->
-  <rect x="0" y="0" width="920" height="380" fill="url(#scanlines)" pointer-events="none" />
+  <!-- Scanline Filter -->
+  <rect x="2" y="2" width="846" height="131" rx="10" fill="url(#scan)" pointer-events="none" />
 </svg>

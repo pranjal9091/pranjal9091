@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/pranjal9091/pranjal9091/main/assets/banner.svg" alt="Pranjal Singh - Systems & AI Engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/pranjal9091/pranjal9091/main/assets/banner.svg" alt="Pranjal Singh - Systems & AI Architecture" width="100%" />
 
 <br/>
 
 <a href="https://github.com/pranjal9091">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00ff88&background=0D111700&center=true&vCenter=true&multiline=false&width=750&height=42&lines=Systems+Architect+%26+Software+Engineer;Building+Local-First+Developer+Tools+in+Rust;Distributed+P2P+Networks+%26+Applied+Cryptography;High-Performance+Neural+Runtimes+%26+INT8+Quantization;Competitive+Coder+(Peak+1553+CodeChef)+%26+Open+Source" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=3000&pause=1000&color=00ff88&background=0D111700&center=true&vCenter=true&multiline=false&width=700&height=38&lines=Systems+Architect+%26+Software+Engineer;Building+Local-First+Developer+Tools+in+Rust;Distributed+P2P+Networks+%26+Applied+Cryptography;High-Performance+Neural+Runtimes+%26+Quantization" alt="Typing SVG" />
 </a>
 
 <br/>
